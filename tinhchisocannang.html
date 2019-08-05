@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input   id="weight"> Kg<br>
+<input   id="height"> M<br>
+<output id="Result" ></output><br>
+<output id ="rate"></output>
+<button type="button" onclick="bmi()">Submit</button>
+<br>
+<script>
+
+    function bmi() {
+        let height = parseInt(document.getElementById("height").value);
+        let weight = parseInt(document.getElementById("weight").value);
+        let bmi = weight/(height^2);
+        document.getElementById("Result").innerHTML = "bmi :" + bmi ;
+        if (bmi < 18)
+            document.getElementById("rate").innerHTML = "Underweight";
+        else if (bmi < 25.0)
+            document.getElementById("rate").innerHTML = "Normal";
+        else if (bmi < 30.0)
+            document.getElementById("rate").innerHTML = "Overweight";
+        else if (30 < bmi < 300)
+            document.getElementById("rate").innerHTML = "Obese";
+    }
+
+</script>
+</body>
+</html>
